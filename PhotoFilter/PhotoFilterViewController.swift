@@ -1,5 +1,6 @@
 import UIKit
 import CoreImage
+import CoreImage.CIFilterBuiltins
 import Photos
 
 class PhotoFilterViewController: UIViewController {
@@ -11,10 +12,18 @@ class PhotoFilterViewController: UIViewController {
 	@IBOutlet weak var imageView: UIImageView!
     
     // MARK: Properties
-    var originalImage: UIImage?
+    private let ctx = CIContext()
+    private let filter = CIFilter.colorControls()
+    
+    var originalImage: UIImage? {
+        didSet {
+            updateImage()
+        }
+    }
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        originalImage = imageView.image
 	}
 	
 	// MARK: Actions
@@ -29,18 +38,38 @@ class PhotoFilterViewController: UIViewController {
 
 	// MARK: Slider Events
 	@IBAction func brightnessChanged(_ sender: UISlider) {
-
+        updateImage()
 	}
 	
 	@IBAction func contrastChanged(_ sender: Any) {
-
+        updateImage()
 	}
 	
 	@IBAction func saturationChanged(_ sender: Any) {
-
+        updateImage()
 	}
     
     // MARK: Private Functions
+    private func updateImage() {
+        if let originalImage = originalImage {
+            imageView.image = image(byFiltering: originalImage)
+        } else {
+            imageView.image = nil
+        }
+    }
+    
+    private func image(byFiltering image: UIImage) -> UIImage {
+        let inputImage = CIImage(image: image)
+        filter.inputImage = inputImage
+        filter.saturation = saturationSlider.value
+        filter.brightness = brightnessSlider.value
+        filter.contrast = contrastSlider.value
+        
+        guard let outputImage = filter.outputImage else { return image }
+        guard let renderedCGImage = ctx.createCGImage(outputImage, from: outputImage.extent) else { return image }
+        return UIImage(cgImage: renderedCGImage)
+    }
+    
     private func presentImagePickerController() {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
             print("The photo library is not available.")
