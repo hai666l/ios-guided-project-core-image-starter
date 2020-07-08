@@ -10,7 +10,6 @@
 		BD99071423957038009F7CDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99071323957038009F7CDB /* AppDelegate.swift */; };
 		BD99071623957038009F7CDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99071523957038009F7CDB /* SceneDelegate.swift */; };
 		BD99071D2395703C009F7CDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD99071C2395703C009F7CDB /* Assets.xcassets */; };
-		BD9907202395703C009F7CDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD99071E2395703C009F7CDB /* LaunchScreen.storyboard */; };
 		BD99072A23957067009F7CDB /* PhotoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99072723957067009F7CDB /* PhotoFilterViewController.swift */; };
 		BD99072B23957067009F7CDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD99072823957067009F7CDB /* Main.storyboard */; };
 		BD99072C23957067009F7CDB /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99072923957067009F7CDB /* UIImage+Scaling.swift */; };
@@ -21,7 +20,6 @@
 		BD99071323957038009F7CDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD99071523957038009F7CDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD99071C2395703C009F7CDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BD99071F2395703C009F7CDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD9907212395703C009F7CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD99072723957067009F7CDB /* PhotoFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFilterViewController.swift; sourceTree = "<group>"; };
 		BD99072823957067009F7CDB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +37,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		132A07E124B55643005DC585 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD99071323957038009F7CDB /* AppDelegate.swift */,
+				BD99071523957038009F7CDB /* SceneDelegate.swift */,
+				BD99071C2395703C009F7CDB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BD99070723957038009F7CDB = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +66,10 @@
 		BD99071223957038009F7CDB /* PhotoFilter */ = {
 			isa = PBXGroup;
 			children = (
-				BD99071323957038009F7CDB /* AppDelegate.swift */,
-				BD99071523957038009F7CDB /* SceneDelegate.swift */,
 				BD99072823957067009F7CDB /* Main.storyboard */,
 				BD99072723957067009F7CDB /* PhotoFilterViewController.swift */,
 				BD99072923957067009F7CDB /* UIImage+Scaling.swift */,
-				BD99071C2395703C009F7CDB /* Assets.xcassets */,
-				BD99071E2395703C009F7CDB /* LaunchScreen.storyboard */,
+				132A07E124B55643005DC585 /* Resources */,
 				BD9907212395703C009F7CDB /* Info.plist */,
 			);
 			path = PhotoFilter;
@@ -129,7 +134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD99072B23957067009F7CDB /* Main.storyboard in Resources */,
-				BD9907202395703C009F7CDB /* LaunchScreen.storyboard in Resources */,
 				BD99071D2395703C009F7CDB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,17 +153,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		BD99071E2395703C009F7CDB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD99071F2395703C009F7CDB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BD9907222395703C009F7CDB /* Debug */ = {
